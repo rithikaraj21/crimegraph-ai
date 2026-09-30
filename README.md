@@ -9,7 +9,6 @@ CrimeGraph AI is an **investigation-support tool**. It does not declare anyone g
 |---|---|
 | `papers/` | The 10 reference papers (reference list, not PDFs) |
 | `datasets/` | Dataset inventory, synthetic dataset, instructions for public datasets |
-| `datasets/synthetic/` | Our fictional investigation dataset, generator, Neo4j loader, demo queries |
-| `scripts/` | Download script for public datasets |
+
 
 
