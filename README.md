@@ -12,14 +12,4 @@ CrimeGraph AI is an **investigation-support tool**. It does not declare anyone g
 | `datasets/synthetic/` | Our fictional investigation dataset, generator, Neo4j loader, demo queries |
 | `scripts/` | Download script for public datasets |
 
-## Quick start (synthetic dataset)
-    cd datasets/synthetic
-    docker compose up -d
-    pip install neo4j
-    python load_to_neo4j.py --reset
-Open http://localhost:7474 (neo4j / crimegraph123) and run `queries.cypher`.
 
-See `datasets/README.md` for every dataset, its source, licence and status.
-
-## Team
-TODO: names
