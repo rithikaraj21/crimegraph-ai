@@ -1,0 +1,82 @@
+{
+  "report_id": "R009",
+  "file": "R009_FIR_I006.txt",
+  "case_id": "C002",
+  "entities": [
+    {
+      "mention": "XXXXXX4008",
+      "id": "AC008",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4016",
+      "id": "AC016",
+      "type": "Account"
+    },
+    {
+      "mention": "C002",
+      "id": "C002",
+      "type": "Case"
+    },
+    {
+      "mention": "E010",
+      "id": "E010",
+      "type": "Evidence"
+    },
+    {
+      "mention": "I006",
+      "id": "I006",
+      "type": "Incident"
+    },
+    {
+      "mention": "Velachery",
+      "id": "L008",
+      "type": "Location"
+    },
+    {
+      "mention": "Rekha Subramani",
+      "id": "P026",
+      "type": "Person"
+    },
+    {
+      "mention": "Swathi Mohan",
+      "id": "P033",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "I006",
+      "relation": "OCCURRED_AT",
+      "target": "L008",
+      "date": "2026-09-27"
+    },
+    {
+      "source": "I006",
+      "relation": "PART_OF",
+      "target": "C002"
+    },
+    {
+      "source": "P033",
+      "relation": "VICTIM_OF",
+      "target": "I006"
+    },
+    {
+      "source": "P033",
+      "relation": "OWNS",
+      "target": "AC016"
+    },
+    {
+      "source": "AC016",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC008",
+      "date": "2026-09-27",
+      "amount": 120000
+    },
+    {
+      "source": "E010",
+      "relation": "SUPPORTS",
+      "target": "I006"
+    }
+  ]
+}

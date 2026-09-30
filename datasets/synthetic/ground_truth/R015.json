@@ -1,0 +1,229 @@
+{
+  "report_id": "R015",
+  "file": "R015_CYBER_C003.txt",
+  "case_id": "C003",
+  "entities": [
+    {
+      "mention": "XXXXXX4005",
+      "id": "AC005",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4010",
+      "id": "AC010",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4011",
+      "id": "AC011",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4012",
+      "id": "AC012",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4018",
+      "id": "AC018",
+      "type": "Account"
+    },
+    {
+      "mention": "C003",
+      "id": "C003",
+      "type": "Case"
+    },
+    {
+      "mention": "+91-90000-10017",
+      "id": "D017",
+      "type": "Device"
+    },
+    {
+      "mention": "+91-90000-10019",
+      "id": "D019",
+      "type": "Device"
+    },
+    {
+      "mention": "+91-90000-10025",
+      "id": "D025",
+      "type": "Device"
+    },
+    {
+      "mention": "LAP-0042",
+      "id": "D042",
+      "type": "Device"
+    },
+    {
+      "mention": "203.0.113.50",
+      "id": "IP001",
+      "type": "IPAddress"
+    },
+    {
+      "mention": "198.51.100.23",
+      "id": "IP002",
+      "type": "IPAddress"
+    },
+    {
+      "mention": "Vignesh Anand",
+      "id": "P011",
+      "type": "Person"
+    },
+    {
+      "mention": "Naveen Chandran",
+      "id": "P017",
+      "type": "Person"
+    },
+    {
+      "mention": "Naveen C",
+      "id": "P017",
+      "type": "Person"
+    },
+    {
+      "mention": "Sathish Kumar",
+      "id": "P018",
+      "type": "Person"
+    },
+    {
+      "mention": "Sathish K",
+      "id": "P018",
+      "type": "Person"
+    },
+    {
+      "mention": "Roshan Ali",
+      "id": "P019",
+      "type": "Person"
+    },
+    {
+      "mention": "Manoj Kannan",
+      "id": "P025",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "P017",
+      "relation": "USES",
+      "target": "D017"
+    },
+    {
+      "source": "P017",
+      "relation": "USES",
+      "target": "D042"
+    },
+    {
+      "source": "P019",
+      "relation": "USES",
+      "target": "D042"
+    },
+    {
+      "source": "P019",
+      "relation": "USES",
+      "target": "D019"
+    },
+    {
+      "source": "P025",
+      "relation": "USES",
+      "target": "D025"
+    },
+    {
+      "source": "P017",
+      "relation": "OWNS",
+      "target": "AC010"
+    },
+    {
+      "source": "P019",
+      "relation": "OWNS",
+      "target": "AC011"
+    },
+    {
+      "source": "P018",
+      "relation": "OWNS",
+      "target": "AC012"
+    },
+    {
+      "source": "P025",
+      "relation": "OWNS",
+      "target": "AC018"
+    },
+    {
+      "source": "P017",
+      "relation": "CONTACTED",
+      "target": "P018",
+      "call_count": 11,
+      "first_call": "2026-09-02",
+      "last_call": "2026-09-26"
+    },
+    {
+      "source": "P017",
+      "relation": "CONTACTED",
+      "target": "P019",
+      "call_count": 9,
+      "first_call": "2026-08-28",
+      "last_call": "2026-09-27"
+    },
+    {
+      "source": "P018",
+      "relation": "CONTACTED",
+      "target": "P019",
+      "call_count": 5,
+      "first_call": "2026-08-30",
+      "last_call": "2026-09-28"
+    },
+    {
+      "source": "P017",
+      "relation": "CONTACTED",
+      "target": "P025",
+      "call_count": 6,
+      "first_call": "2026-09-04",
+      "last_call": "2026-09-25"
+    },
+    {
+      "source": "P019",
+      "relation": "CONTACTED",
+      "target": "P025",
+      "call_count": 4,
+      "first_call": "2026-09-11",
+      "last_call": "2026-09-27"
+    },
+    {
+      "source": "D042",
+      "relation": "CONNECTED_TO",
+      "target": "IP002",
+      "date": "2026-09-03"
+    },
+    {
+      "source": "D042",
+      "relation": "CONNECTED_TO",
+      "target": "IP001",
+      "date": "2026-09-17"
+    },
+    {
+      "source": "AC010",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC011",
+      "date": "2026-09-20",
+      "amount": 15000
+    },
+    {
+      "source": "AC011",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC012",
+      "date": "2026-09-22",
+      "amount": 6000
+    },
+    {
+      "source": "AC018",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC010",
+      "date": "2026-09-27",
+      "amount": 4000
+    },
+    {
+      "source": "AC012",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC005",
+      "date": "2026-09-24",
+      "amount": 9000
+    }
+  ]
+}

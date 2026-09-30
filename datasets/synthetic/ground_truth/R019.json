@@ -1,0 +1,74 @@
+{
+  "report_id": "R019",
+  "file": "R019_SEIZURE_C001.txt",
+  "case_id": "C001",
+  "entities": [
+    {
+      "mention": "C001",
+      "id": "C001",
+      "type": "Case"
+    },
+    {
+      "mention": "E016",
+      "id": "E016",
+      "type": "Evidence"
+    },
+    {
+      "mention": "Arun Kumar",
+      "id": "P001",
+      "type": "Person"
+    },
+    {
+      "mention": "Bala Murugan",
+      "id": "P002",
+      "type": "Person"
+    },
+    {
+      "mention": "Karthik Raja",
+      "id": "P003",
+      "type": "Person"
+    },
+    {
+      "mention": "Dinesh Babu",
+      "id": "P004",
+      "type": "Person"
+    },
+    {
+      "mention": "Selvam Pillai",
+      "id": "P005",
+      "type": "Person"
+    },
+    {
+      "mention": "Vimal Raj",
+      "id": "P037",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "E016",
+      "relation": "MENTIONS",
+      "target": "P004"
+    },
+    {
+      "source": "E016",
+      "relation": "MENTIONS",
+      "target": "P005"
+    },
+    {
+      "source": "P001",
+      "relation": "ASSOCIATED_WITH",
+      "target": "P002"
+    },
+    {
+      "source": "P002",
+      "relation": "ASSOCIATED_WITH",
+      "target": "P003"
+    },
+    {
+      "source": "P037",
+      "relation": "ASSOCIATED_WITH",
+      "target": "P001"
+    }
+  ]
+}

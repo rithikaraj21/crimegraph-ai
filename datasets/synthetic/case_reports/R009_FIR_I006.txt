@@ -1,0 +1,15 @@
+SYNTHETIC CASE REPORT - FICTIONAL DATA FOR PROTOTYPE USE ONLY
+Report ID      : R009
+Report Type    : First Information Report (FIR)
+Case           : C002 - Mule Account UPI Fraud Ring
+Date of report : 28 September 2026
+Prepared by    : Investigating Officer (fictional)
+----------------------------------------------------------------
+
+This report records a cyber-fraud complaint received at the cyber crime cell.
+
+Incident I006 (Investment Fraud) occurred at Velachery on 27 September 2026. The matter I006 forms part of case C002. The complainant, Swathi Mohan, stated that incident I006 caused them a loss.
+
+Swathi Mohan is the holder of account XXXXXX4016 at Coastal Bank. On 27 September 2026, Rs. 1,20,000 was transferred from account XXXXXX4016 (held by Swathi Mohan) to account XXXXXX4008 (held by Rekha Subramani) through UPI. Evidence E010 (screenshots of the fake trading platform) is relevant to incident I006.
+
+This document is synthetic. It contains no real persons and does not establish responsibility for any offence; it is a working note for investigation support only.

@@ -1,0 +1,5 @@
+ip_id,address,label
+IP001,203.0.113.50,Malicious-C&C
+IP002,198.51.100.23,Malicious-Phishing
+IP003,192.0.2.10,Benign
+IP004,198.51.100.77,Benign

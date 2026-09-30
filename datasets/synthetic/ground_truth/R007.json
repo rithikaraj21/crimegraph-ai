@@ -1,0 +1,82 @@
+{
+  "report_id": "R007",
+  "file": "R007_FIR_I004.txt",
+  "case_id": "C002",
+  "entities": [
+    {
+      "mention": "XXXXXX4007",
+      "id": "AC007",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4017",
+      "id": "AC017",
+      "type": "Account"
+    },
+    {
+      "mention": "C002",
+      "id": "C002",
+      "type": "Case"
+    },
+    {
+      "mention": "E008",
+      "id": "E008",
+      "type": "Evidence"
+    },
+    {
+      "mention": "I004",
+      "id": "I004",
+      "type": "Incident"
+    },
+    {
+      "mention": "Guindy",
+      "id": "L002",
+      "type": "Location"
+    },
+    {
+      "mention": "Mohan Das",
+      "id": "P013",
+      "type": "Person"
+    },
+    {
+      "mention": "Pooja Sharma",
+      "id": "P038",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "I004",
+      "relation": "OCCURRED_AT",
+      "target": "L002",
+      "date": "2026-09-22"
+    },
+    {
+      "source": "I004",
+      "relation": "PART_OF",
+      "target": "C002"
+    },
+    {
+      "source": "P038",
+      "relation": "VICTIM_OF",
+      "target": "I004"
+    },
+    {
+      "source": "P038",
+      "relation": "OWNS",
+      "target": "AC017"
+    },
+    {
+      "source": "AC017",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC007",
+      "date": "2026-09-22",
+      "amount": 62000
+    },
+    {
+      "source": "E008",
+      "relation": "SUPPORTS",
+      "target": "I004"
+    }
+  ]
+}

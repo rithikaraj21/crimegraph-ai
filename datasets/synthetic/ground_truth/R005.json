@@ -1,0 +1,97 @@
+{
+  "report_id": "R005",
+  "file": "R005_FIR_I003.txt",
+  "case_id": "C001",
+  "entities": [
+    {
+      "mention": "C001",
+      "id": "C001",
+      "type": "Case"
+    },
+    {
+      "mention": "E005",
+      "id": "E005",
+      "type": "Evidence"
+    },
+    {
+      "mention": "I003",
+      "id": "I003",
+      "type": "Incident"
+    },
+    {
+      "mention": "T. Nagar",
+      "id": "L003",
+      "type": "Location"
+    },
+    {
+      "mention": "Arun Kumar",
+      "id": "P001",
+      "type": "Person"
+    },
+    {
+      "mention": "Dinesh Babu",
+      "id": "P004",
+      "type": "Person"
+    },
+    {
+      "mention": "Suresh Iyer",
+      "id": "P009",
+      "type": "Person"
+    },
+    {
+      "mention": "Priya Nair",
+      "id": "P010",
+      "type": "Person"
+    },
+    {
+      "mention": "Divya Prakash",
+      "id": "P028",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "I003",
+      "relation": "OCCURRED_AT",
+      "target": "L003",
+      "date": "2026-09-25"
+    },
+    {
+      "source": "I003",
+      "relation": "PART_OF",
+      "target": "C001"
+    },
+    {
+      "source": "P009",
+      "relation": "VICTIM_OF",
+      "target": "I003"
+    },
+    {
+      "source": "P010",
+      "relation": "WITNESSED",
+      "target": "I003"
+    },
+    {
+      "source": "P028",
+      "relation": "WITNESSED",
+      "target": "I003"
+    },
+    {
+      "source": "P001",
+      "relation": "VISITED",
+      "target": "L003",
+      "date": "2026-09-25"
+    },
+    {
+      "source": "P004",
+      "relation": "VISITED",
+      "target": "L003",
+      "date": "2026-09-25"
+    },
+    {
+      "source": "E005",
+      "relation": "SUPPORTS",
+      "target": "I003"
+    }
+  ]
+}

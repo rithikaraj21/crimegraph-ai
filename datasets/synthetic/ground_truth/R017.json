@@ -1,0 +1,51 @@
+{
+  "report_id": "R017",
+  "file": "R017_WITNESS_I010.txt",
+  "case_id": "C004",
+  "entities": [
+    {
+      "mention": "C004",
+      "id": "C004",
+      "type": "Case"
+    },
+    {
+      "mention": "I010",
+      "id": "I010",
+      "type": "Incident"
+    },
+    {
+      "mention": "Tambaram",
+      "id": "L009",
+      "type": "Location"
+    },
+    {
+      "mention": "Thenmozhi Rajan",
+      "id": "P023",
+      "type": "Person"
+    },
+    {
+      "mention": "Farook Ahmed",
+      "id": "P030",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "I010",
+      "relation": "OCCURRED_AT",
+      "target": "L009",
+      "date": "2026-08-30"
+    },
+    {
+      "source": "P023",
+      "relation": "WITNESSED",
+      "target": "I010"
+    },
+    {
+      "source": "P030",
+      "relation": "VISITED",
+      "target": "L009",
+      "date": "2026-08-30"
+    }
+  ]
+}

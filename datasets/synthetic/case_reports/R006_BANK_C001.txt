@@ -1,0 +1,17 @@
+SYNTHETIC CASE REPORT - FICTIONAL DATA FOR PROTOTYPE USE ONLY
+Report ID      : R006
+Report Type    : Bank Transaction Analysis Note
+Case           : C001 - Central Chennai Robbery Series
+Date of report : 28 September 2026
+Prepared by    : Investigating Officer (fictional)
+----------------------------------------------------------------
+
+This note summarises bank account records requested for the case.
+
+Account XXXXXX4001 is held by Arun Kumar at Coastal Bank. Account XXXXXX4002 is held by Bala Murugan at Metro Cooperative Bank. Karthik Raja is the holder of account XXXXXX4003 at Sunrise Bank.
+
+Account XXXXXX4004 is held by Dinesh Babu at Coastal Bank. Selvam Pillai is the holder of account XXXXXX4019 at Coastal Bank. On 21 September 2026, Rs. 25,000 was transferred from account XXXXXX4003 (held by Karthi) to account XXXXXX4006 (held by Harini Sekar) through UPI.
+
+An UPI transfer of Rs. 10,000 was made on 21 September 2026 from account XXXXXX4001 of AK to account XXXXXX4004 of Dinesh Babu. On 21 September 2026, Rs. 8,000 was transferred from account XXXXXX4002 (held by Bala Murugan) to account XXXXXX4019 (held by Selvam) through UPI.
+
+This document is synthetic. It contains no real persons and does not establish responsibility for any offence; it is a working note for investigation support only.

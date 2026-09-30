@@ -1,0 +1,15 @@
+SYNTHETIC CASE REPORT - FICTIONAL DATA FOR PROTOTYPE USE ONLY
+Report ID      : R012
+Report Type    : First Information Report (FIR)
+Case           : C003 - Phishing and Malware Campaign
+Date of report : 6 September 2026
+Prepared by    : Investigating Officer (fictional)
+----------------------------------------------------------------
+
+This report records a cyber-crime complaint received at the cyber crime cell.
+
+Incident I007 (Phishing Campaign) occurred at Anna Nagar on 5 September 2026. Incident I007 is registered under case C003. The complainant, Ismail Khan, stated that incident I007 caused them a loss.
+
+Ismail Khan is the holder of account XXXXXX4014 at Sunrise Bank. On 6 September 2026, Rs. 18,500 was transferred from account XXXXXX4014 (held by Ismail Khan) to account XXXXXX4011 (held by Roshan Ali) through UPI. Evidence E013 (copy of the phishing e-mail received by the complainant) is relevant to incident I007.
+
+This document is synthetic. It contains no real persons and does not establish responsibility for any offence; it is a working note for investigation support only.

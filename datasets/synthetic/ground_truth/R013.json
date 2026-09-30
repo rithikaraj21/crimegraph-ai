@@ -1,0 +1,96 @@
+{
+  "report_id": "R013",
+  "file": "R013_FORENSIC_I008.txt",
+  "case_id": "C003",
+  "entities": [
+    {
+      "mention": "C003",
+      "id": "C003",
+      "type": "Case"
+    },
+    {
+      "mention": "PC-SHOP-01",
+      "id": "D043",
+      "type": "Device"
+    },
+    {
+      "mention": "E011",
+      "id": "E011",
+      "type": "Evidence"
+    },
+    {
+      "mention": "E012",
+      "id": "E012",
+      "type": "Evidence"
+    },
+    {
+      "mention": "I008",
+      "id": "I008",
+      "type": "Incident"
+    },
+    {
+      "mention": "203.0.113.50",
+      "id": "IP001",
+      "type": "IPAddress"
+    },
+    {
+      "mention": "Koyambedu",
+      "id": "L010",
+      "type": "Location"
+    },
+    {
+      "mention": "Anitha Balaji",
+      "id": "P020",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "I008",
+      "relation": "OCCURRED_AT",
+      "target": "L010",
+      "date": "2026-09-18"
+    },
+    {
+      "source": "I008",
+      "relation": "PART_OF",
+      "target": "C003"
+    },
+    {
+      "source": "P020",
+      "relation": "VICTIM_OF",
+      "target": "I008"
+    },
+    {
+      "source": "P020",
+      "relation": "USES",
+      "target": "D043"
+    },
+    {
+      "source": "D043",
+      "relation": "CONNECTED_TO",
+      "target": "IP001",
+      "date": "2026-09-18"
+    },
+    {
+      "source": "E012",
+      "relation": "FOUND_ON",
+      "target": "D043"
+    },
+    {
+      "source": "E011",
+      "relation": "DERIVED_FROM",
+      "target": "D043"
+    },
+    {
+      "source": "E011",
+      "relation": "SUPPORTS",
+      "target": "I008"
+    },
+    {
+      "source": "E012",
+      "relation": "SUPPORTS",
+      "target": "I008"
+    }
+  ]
+}

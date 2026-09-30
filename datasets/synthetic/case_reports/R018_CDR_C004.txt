@@ -1,0 +1,17 @@
+SYNTHETIC CASE REPORT - FICTIONAL DATA FOR PROTOTYPE USE ONLY
+Report ID      : R018
+Report Type    : Call Records Analysis Note
+Case           : C004 - Tambaram Vehicle Theft
+Date of report : 10 September 2026
+Prepared by    : Investigating Officer (fictional)
+----------------------------------------------------------------
+
+This note summarises call detail records obtained for handsets linked to the case.
+
+Senthil Nathan was found to be using the phone +91-90000-10029. The phone +91-90000-10030 is used by Farook Ahmed. Tamilselvan was found to be using the phone +91-90000-10036.
+
+Call records show 7 calls between Senthil Nathan and Farook from 29 August 2026 to 23 September 2026. Call records show 5 calls between Senthil Nathan and Tamilselvan from 29 August 2026 to 20 September 2026. Call records show 4 calls between Farook Ahmed and Tamilselvan from 27 August 2026 to 22 September 2026.
+
+Call records show 2 calls between Farook Ahmed and Dinesh Babu from 30 August 2026 to 10 September 2026. Earlier records list Farook Ahmed as an associate of Senthil Nathan.
+
+This document is synthetic. It contains no real persons and does not establish responsibility for any offence; it is a working note for investigation support only.

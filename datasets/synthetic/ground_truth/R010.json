@@ -1,0 +1,205 @@
+{
+  "report_id": "R010",
+  "file": "R010_BANK_C002.txt",
+  "case_id": "C002",
+  "entities": [
+    {
+      "mention": "XXXXXX4005",
+      "id": "AC005",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4006",
+      "id": "AC006",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4007",
+      "id": "AC007",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4008",
+      "id": "AC008",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4009",
+      "id": "AC009",
+      "type": "Account"
+    },
+    {
+      "mention": "C002",
+      "id": "C002",
+      "type": "Case"
+    },
+    {
+      "mention": "E007",
+      "id": "E007",
+      "type": "Evidence"
+    },
+    {
+      "mention": "Guindy",
+      "id": "L002",
+      "type": "Location"
+    },
+    {
+      "mention": "Adyar",
+      "id": "L006",
+      "type": "Location"
+    },
+    {
+      "mention": "Velachery",
+      "id": "L008",
+      "type": "Location"
+    },
+    {
+      "mention": "Vignesh Anand",
+      "id": "P011",
+      "type": "Person"
+    },
+    {
+      "mention": "Vicky",
+      "id": "P011",
+      "type": "Person"
+    },
+    {
+      "mention": "Harini Sekar",
+      "id": "P012",
+      "type": "Person"
+    },
+    {
+      "mention": "Mohan Das",
+      "id": "P013",
+      "type": "Person"
+    },
+    {
+      "mention": "Rekha Subramani",
+      "id": "P026",
+      "type": "Person"
+    },
+    {
+      "mention": "Ajay Menon",
+      "id": "P027",
+      "type": "Person"
+    },
+    {
+      "mention": "Nithya Raman",
+      "id": "P031",
+      "type": "Person"
+    },
+    {
+      "mention": "Rajesh Pandian",
+      "id": "P032",
+      "type": "Person"
+    },
+    {
+      "mention": "Kishore Kumar",
+      "id": "P039",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "P011",
+      "relation": "OWNS",
+      "target": "AC005"
+    },
+    {
+      "source": "P012",
+      "relation": "OWNS",
+      "target": "AC006"
+    },
+    {
+      "source": "P013",
+      "relation": "OWNS",
+      "target": "AC007"
+    },
+    {
+      "source": "P026",
+      "relation": "OWNS",
+      "target": "AC008"
+    },
+    {
+      "source": "P027",
+      "relation": "OWNS",
+      "target": "AC009"
+    },
+    {
+      "source": "AC006",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC005",
+      "date": "2026-09-11",
+      "amount": 40000
+    },
+    {
+      "source": "AC005",
+      "relation": "WITHDRAWN_AT",
+      "target": "L002",
+      "date": "2026-09-12",
+      "amount": 20000
+    },
+    {
+      "source": "AC006",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC005",
+      "date": "2026-09-13",
+      "amount": 28000
+    },
+    {
+      "source": "AC007",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC005",
+      "date": "2026-09-23",
+      "amount": 55000
+    },
+    {
+      "source": "AC005",
+      "relation": "WITHDRAWN_AT",
+      "target": "L006",
+      "date": "2026-09-24",
+      "amount": 25000
+    },
+    {
+      "source": "AC008",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC009",
+      "date": "2026-09-28",
+      "amount": 100000
+    },
+    {
+      "source": "AC009",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC005",
+      "date": "2026-09-28",
+      "amount": 90000
+    },
+    {
+      "source": "AC005",
+      "relation": "WITHDRAWN_AT",
+      "target": "L008",
+      "date": "2026-09-28",
+      "amount": 50000
+    },
+    {
+      "source": "P031",
+      "relation": "PROVIDED",
+      "target": "E007"
+    },
+    {
+      "source": "E007",
+      "relation": "MENTIONS",
+      "target": "P011"
+    },
+    {
+      "source": "P032",
+      "relation": "ASSOCIATED_WITH",
+      "target": "P012"
+    },
+    {
+      "source": "P039",
+      "relation": "ASSOCIATED_WITH",
+      "target": "P026"
+    }
+  ]
+}

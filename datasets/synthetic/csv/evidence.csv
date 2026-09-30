@@ -1,0 +1,17 @@
+evidence_id,evidence_type,case_id,description,collected_date,source_report
+E001,CCTV Footage,C001,CCTV video from the station entrance,2026-09-21,R001
+E002,Witness Statement,C001,signed statement of a bystander,2026-09-21,R001
+E003,CCTV Footage,C001,CCTV video from a shop near the railway station,2026-09-15,R004
+E004,Witness Statement,C001,statement of a passer-by,2026-09-15,R004
+E005,CCTV Footage,C001,CCTV video from the shopping street,2026-09-26,R005
+E006,CDR Extract,C001,call detail records for the handsets of interest,2026-09-24,R003
+E007,Bank Statement Extract,C002,account statement extract shared by the bank,2026-09-29,R010
+E008,Complaint Screenshot,C002,screenshots of the fraudulent payment request,2026-09-23,R007
+E009,Complaint Screenshot,C002,screenshots of the fake seller chat,2026-09-11,R008
+E010,Complaint Screenshot,C002,screenshots of the fake trading platform,2026-09-28,R009
+E011,Forensic Image,C003,disk image of the shop billing computer,2026-09-19,R013
+E012,Malware Sample,C003,suspicious executable recovered from the shop computer,2026-09-19,R013
+E013,Phishing Email Sample,C003,copy of the phishing e-mail received by the complainant,2026-09-06,R012
+E014,Network Log Extract,C003,network log extract from the complainant's device,2026-09-27,R014
+E015,CCTV Footage,C004,CCTV video from the parking area,2026-08-31,R016
+E016,Seized Item,C001,handwritten notebook with contact details,2026-09-27,R019

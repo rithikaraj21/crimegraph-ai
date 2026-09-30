@@ -1,0 +1,44 @@
+device_id,device_type,identifier,owner_person_id,description
+D001,Phone,+91-90000-10001,P001,Android smartphone
+D002,Phone,+91-90000-10002,P002,Feature phone
+D003,Phone,+91-90000-10003,P003,Android smartphone
+D004,Phone,+91-90000-10004,P004,Android smartphone
+D005,Phone,+91-90000-10005,P005,iOS smartphone
+D006,Phone,+91-90000-10006,P006,Feature phone
+D007,Phone,+91-90000-10007,P007,Android smartphone
+D008,Phone,+91-90000-10008,P008,Feature phone
+D009,Phone,+91-90000-10009,P009,Android smartphone
+D010,Phone,+91-90000-10010,P010,iOS smartphone
+D011,Phone,+91-90000-10011,P011,Android smartphone
+D012,Phone,+91-90000-10012,P012,iOS smartphone
+D013,Phone,+91-90000-10013,P013,iOS smartphone
+D014,Phone,+91-90000-10014,P014,Android smartphone
+D015,Phone,+91-90000-10015,P015,iOS smartphone
+D016,Phone,+91-90000-10016,P016,iOS smartphone
+D017,Phone,+91-90000-10017,P017,Android smartphone
+D018,Phone,+91-90000-10018,P018,iOS smartphone
+D019,Phone,+91-90000-10019,P019,iOS smartphone
+D020,Phone,+91-90000-10020,P020,Feature phone
+D021,Phone,+91-90000-10021,P021,Android smartphone
+D022,Phone,+91-90000-10022,P022,Android smartphone
+D023,Phone,+91-90000-10023,P023,iOS smartphone
+D024,Phone,+91-90000-10024,P024,iOS smartphone
+D025,Phone,+91-90000-10025,P025,Android smartphone
+D026,Phone,+91-90000-10026,P026,Feature phone
+D027,Phone,+91-90000-10027,P027,Feature phone
+D028,Phone,+91-90000-10028,P028,Feature phone
+D029,Phone,+91-90000-10029,P029,Android smartphone
+D030,Phone,+91-90000-10030,P030,Feature phone
+D031,Phone,+91-90000-10031,P031,iOS smartphone
+D032,Phone,+91-90000-10032,P032,iOS smartphone
+D033,Phone,+91-90000-10033,P033,Android smartphone
+D034,Phone,+91-90000-10034,P034,Android smartphone
+D035,Phone,+91-90000-10035,P035,Android smartphone
+D036,Phone,+91-90000-10036,P036,iOS smartphone
+D037,Phone,+91-90000-10037,P037,Feature phone
+D038,Phone,+91-90000-10038,P038,iOS smartphone
+D039,Phone,+91-90000-10039,P039,Android smartphone
+D040,Phone,+91-90000-10040,P040,iOS smartphone
+D041,Phone,+91-90000-10041,P001,Secondary handset (second SIM)
+D042,Laptop,LAP-0042,P017,Windows laptop
+D043,Desktop PC,PC-SHOP-01,P020,Windows desktop PC (shop billing system)

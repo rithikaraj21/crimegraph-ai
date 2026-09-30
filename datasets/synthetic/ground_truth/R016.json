@@ -1,0 +1,76 @@
+{
+  "report_id": "R016",
+  "file": "R016_FIR_I010.txt",
+  "case_id": "C004",
+  "entities": [
+    {
+      "mention": "C004",
+      "id": "C004",
+      "type": "Case"
+    },
+    {
+      "mention": "E015",
+      "id": "E015",
+      "type": "Evidence"
+    },
+    {
+      "mention": "I010",
+      "id": "I010",
+      "type": "Incident"
+    },
+    {
+      "mention": "Tambaram",
+      "id": "L009",
+      "type": "Location"
+    },
+    {
+      "mention": "Gopal Krishnan",
+      "id": "P022",
+      "type": "Person"
+    },
+    {
+      "mention": "Yusuf Basha",
+      "id": "P024",
+      "type": "Person"
+    },
+    {
+      "mention": "Senthil Nathan",
+      "id": "P029",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "I010",
+      "relation": "OCCURRED_AT",
+      "target": "L009",
+      "date": "2026-08-30"
+    },
+    {
+      "source": "I010",
+      "relation": "PART_OF",
+      "target": "C004"
+    },
+    {
+      "source": "P024",
+      "relation": "VICTIM_OF",
+      "target": "I010"
+    },
+    {
+      "source": "P022",
+      "relation": "WITNESSED",
+      "target": "I010"
+    },
+    {
+      "source": "P029",
+      "relation": "VISITED",
+      "target": "L009",
+      "date": "2026-08-30"
+    },
+    {
+      "source": "E015",
+      "relation": "SUPPORTS",
+      "target": "I010"
+    }
+  ]
+}

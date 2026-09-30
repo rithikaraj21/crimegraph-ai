@@ -1,0 +1,109 @@
+{
+  "report_id": "R008",
+  "file": "R008_FIR_I005.txt",
+  "case_id": "C002",
+  "entities": [
+    {
+      "mention": "XXXXXX4006",
+      "id": "AC006",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4013",
+      "id": "AC013",
+      "type": "Account"
+    },
+    {
+      "mention": "XXXXXX4015",
+      "id": "AC015",
+      "type": "Account"
+    },
+    {
+      "mention": "C002",
+      "id": "C002",
+      "type": "Case"
+    },
+    {
+      "mention": "E009",
+      "id": "E009",
+      "type": "Evidence"
+    },
+    {
+      "mention": "I005",
+      "id": "I005",
+      "type": "Incident"
+    },
+    {
+      "mention": "Adyar",
+      "id": "L006",
+      "type": "Location"
+    },
+    {
+      "mention": "Harini Sekar",
+      "id": "P012",
+      "type": "Person"
+    },
+    {
+      "mention": "Kavya Reddy",
+      "id": "P014",
+      "type": "Person"
+    },
+    {
+      "mention": "Deepak Joseph",
+      "id": "P016",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "I005",
+      "relation": "OCCURRED_AT",
+      "target": "L006",
+      "date": "2026-09-10"
+    },
+    {
+      "source": "I005",
+      "relation": "PART_OF",
+      "target": "C002"
+    },
+    {
+      "source": "P014",
+      "relation": "VICTIM_OF",
+      "target": "I005"
+    },
+    {
+      "source": "P016",
+      "relation": "VICTIM_OF",
+      "target": "I005"
+    },
+    {
+      "source": "P014",
+      "relation": "OWNS",
+      "target": "AC013"
+    },
+    {
+      "source": "P016",
+      "relation": "OWNS",
+      "target": "AC015"
+    },
+    {
+      "source": "AC013",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC006",
+      "date": "2026-09-10",
+      "amount": 45000
+    },
+    {
+      "source": "AC015",
+      "relation": "TRANSFERRED_TO",
+      "target": "AC006",
+      "date": "2026-09-10",
+      "amount": 30000
+    },
+    {
+      "source": "E009",
+      "relation": "SUPPORTS",
+      "target": "I005"
+    }
+  ]
+}

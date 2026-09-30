@@ -1,0 +1,165 @@
+{
+  "report_id": "R011",
+  "file": "R011_CDR_C002.txt",
+  "case_id": "C002",
+  "entities": [
+    {
+      "mention": "C002",
+      "id": "C002",
+      "type": "Case"
+    },
+    {
+      "mention": "+91-90000-10011",
+      "id": "D011",
+      "type": "Device"
+    },
+    {
+      "mention": "+91-90000-10012",
+      "id": "D012",
+      "type": "Device"
+    },
+    {
+      "mention": "+91-90000-10013",
+      "id": "D013",
+      "type": "Device"
+    },
+    {
+      "mention": "+91-90000-10018",
+      "id": "D018",
+      "type": "Device"
+    },
+    {
+      "mention": "+91-90000-10026",
+      "id": "D026",
+      "type": "Device"
+    },
+    {
+      "mention": "+91-90000-10027",
+      "id": "D027",
+      "type": "Device"
+    },
+    {
+      "mention": "Vignesh Anand",
+      "id": "P011",
+      "type": "Person"
+    },
+    {
+      "mention": "Vicky",
+      "id": "P011",
+      "type": "Person"
+    },
+    {
+      "mention": "Harini Sekar",
+      "id": "P012",
+      "type": "Person"
+    },
+    {
+      "mention": "Mohan Das",
+      "id": "P013",
+      "type": "Person"
+    },
+    {
+      "mention": "Sathish Kumar",
+      "id": "P018",
+      "type": "Person"
+    },
+    {
+      "mention": "Rekha Subramani",
+      "id": "P026",
+      "type": "Person"
+    },
+    {
+      "mention": "Ajay Menon",
+      "id": "P027",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "P011",
+      "relation": "USES",
+      "target": "D011"
+    },
+    {
+      "source": "P012",
+      "relation": "USES",
+      "target": "D012"
+    },
+    {
+      "source": "P013",
+      "relation": "USES",
+      "target": "D013"
+    },
+    {
+      "source": "P026",
+      "relation": "USES",
+      "target": "D026"
+    },
+    {
+      "source": "P027",
+      "relation": "USES",
+      "target": "D027"
+    },
+    {
+      "source": "P018",
+      "relation": "USES",
+      "target": "D018"
+    },
+    {
+      "source": "P011",
+      "relation": "CONTACTED",
+      "target": "P012",
+      "call_count": 10,
+      "first_call": "2026-09-09",
+      "last_call": "2026-09-27"
+    },
+    {
+      "source": "P011",
+      "relation": "CONTACTED",
+      "target": "P013",
+      "call_count": 7,
+      "first_call": "2026-08-25",
+      "last_call": "2026-09-27"
+    },
+    {
+      "source": "P011",
+      "relation": "CONTACTED",
+      "target": "P026",
+      "call_count": 6,
+      "first_call": "2026-09-04",
+      "last_call": "2026-09-27"
+    },
+    {
+      "source": "P011",
+      "relation": "CONTACTED",
+      "target": "P027",
+      "call_count": 8,
+      "first_call": "2026-09-02",
+      "last_call": "2026-09-27"
+    },
+    {
+      "source": "P012",
+      "relation": "CONTACTED",
+      "target": "P013",
+      "call_count": 3,
+      "first_call": "2026-09-14",
+      "last_call": "2026-09-21"
+    },
+    {
+      "source": "P027",
+      "relation": "CONTACTED",
+      "target": "P026",
+      "call_count": 4,
+      "first_call": "2026-09-10",
+      "last_call": "2026-09-27"
+    },
+    {
+      "source": "P011",
+      "relation": "CONTACTED",
+      "target": "P018",
+      "call_count": 5,
+      "first_call": "2026-08-25",
+      "last_call": "2026-09-28"
+    }
+  ]
+}

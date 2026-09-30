@@ -1,0 +1,21 @@
+SYNTHETIC CASE REPORT - FICTIONAL DATA FOR PROTOTYPE USE ONLY
+Report ID      : R011
+Report Type    : Call Records Analysis Note
+Case           : C002 - Mule Account UPI Fraud Ring
+Date of report : 29 September 2026
+Prepared by    : Investigating Officer (fictional)
+----------------------------------------------------------------
+
+This note summarises call detail records obtained for handsets linked to the case.
+
+The phone +91-90000-10011 is used by Vignesh Anand. Harini Sekar was found to be using the phone +91-90000-10012. Mohan Das was found to be using the phone +91-90000-10013.
+
+The phone +91-90000-10026 is used by Rekha Subramani. Ajay Menon was found to be using the phone +91-90000-10027. Sathish Kumar was found to be using the phone +91-90000-10018.
+
+Vignesh Anand contacted Harini Sekar 10 times between 9 September 2026 and 27 September 2026. Vicky contacted Mohan Das 7 times between 25 August 2026 and 27 September 2026. Vignesh Anand contacted Rekha Subramani 6 times between 4 September 2026 and 27 September 2026.
+
+Vignesh Anand contacted Ajay Menon 8 times between 2 September 2026 and 27 September 2026. Call records show 3 calls between Harini Sekar and Mohan Das from 14 September 2026 to 21 September 2026. Ajay Menon contacted Rekha Subramani 4 times between 10 September 2026 and 27 September 2026.
+
+Vignesh Anand contacted Sathish Kumar 5 times between 25 August 2026 and 28 September 2026.
+
+This document is synthetic. It contains no real persons and does not establish responsibility for any offence; it is a working note for investigation support only.

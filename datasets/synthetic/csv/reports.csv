@@ -1,0 +1,20 @@
+report_id,case_id,report_type,date,title,file
+R001,C001,First Information Report (FIR),2026-09-21,First Information Report (FIR) - FIR_I001,R001_FIR_I001.txt
+R002,C001,Witness Statement,2026-09-21,Witness Statement - WITNESS_I001,R002_WITNESS_I001.txt
+R003,C001,Call Records Analysis Note,2026-09-24,Call Records Analysis Note - CDR_C001,R003_CDR_C001.txt
+R004,C001,First Information Report (FIR),2026-09-15,First Information Report (FIR) - FIR_I002,R004_FIR_I002.txt
+R005,C001,First Information Report (FIR),2026-09-26,First Information Report (FIR) - FIR_I003,R005_FIR_I003.txt
+R006,C001,Bank Transaction Analysis Note,2026-09-28,Bank Transaction Analysis Note - BANK_C001,R006_BANK_C001.txt
+R007,C002,First Information Report (FIR),2026-09-23,First Information Report (FIR) - FIR_I004,R007_FIR_I004.txt
+R008,C002,First Information Report (FIR),2026-09-11,First Information Report (FIR) - FIR_I005,R008_FIR_I005.txt
+R009,C002,First Information Report (FIR),2026-09-28,First Information Report (FIR) - FIR_I006,R009_FIR_I006.txt
+R010,C002,Bank Transaction Analysis Note,2026-09-29,Bank Transaction Analysis Note - BANK_C002,R010_BANK_C002.txt
+R011,C002,Call Records Analysis Note,2026-09-29,Call Records Analysis Note - CDR_C002,R011_CDR_C002.txt
+R012,C003,First Information Report (FIR),2026-09-06,First Information Report (FIR) - FIR_I007,R012_FIR_I007.txt
+R013,C003,Cyber Forensic Report,2026-09-19,Cyber Forensic Report - FORENSIC_I008,R013_FORENSIC_I008.txt
+R014,C003,First Information Report (FIR),2026-09-27,First Information Report (FIR) - FIR_I009,R014_FIR_I009.txt
+R015,C003,Cyber Analysis Note,2026-09-28,Cyber Analysis Note - CYBER_C003,R015_CYBER_C003.txt
+R016,C004,First Information Report (FIR),2026-08-31,First Information Report (FIR) - FIR_I010,R016_FIR_I010.txt
+R017,C004,Witness Statement,2026-09-01,Witness Statement - WITNESS_I010,R017_WITNESS_I010.txt
+R018,C004,Call Records Analysis Note,2026-09-10,Call Records Analysis Note - CDR_C004,R018_CDR_C004.txt
+R019,C001,Seizure Memo,2026-09-27,Seizure Memo - SEIZURE_C001,R019_SEIZURE_C001.txt

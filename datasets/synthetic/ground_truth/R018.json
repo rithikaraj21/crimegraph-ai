@@ -1,0 +1,106 @@
+{
+  "report_id": "R018",
+  "file": "R018_CDR_C004.txt",
+  "case_id": "C004",
+  "entities": [
+    {
+      "mention": "C004",
+      "id": "C004",
+      "type": "Case"
+    },
+    {
+      "mention": "+91-90000-10029",
+      "id": "D029",
+      "type": "Device"
+    },
+    {
+      "mention": "+91-90000-10030",
+      "id": "D030",
+      "type": "Device"
+    },
+    {
+      "mention": "+91-90000-10036",
+      "id": "D036",
+      "type": "Device"
+    },
+    {
+      "mention": "Dinesh Babu",
+      "id": "P004",
+      "type": "Person"
+    },
+    {
+      "mention": "Senthil Nathan",
+      "id": "P029",
+      "type": "Person"
+    },
+    {
+      "mention": "Farook Ahmed",
+      "id": "P030",
+      "type": "Person"
+    },
+    {
+      "mention": "Farook",
+      "id": "P030",
+      "type": "Person"
+    },
+    {
+      "mention": "Tamilselvan",
+      "id": "P036",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "P029",
+      "relation": "USES",
+      "target": "D029"
+    },
+    {
+      "source": "P030",
+      "relation": "USES",
+      "target": "D030"
+    },
+    {
+      "source": "P036",
+      "relation": "USES",
+      "target": "D036"
+    },
+    {
+      "source": "P029",
+      "relation": "CONTACTED",
+      "target": "P030",
+      "call_count": 7,
+      "first_call": "2026-08-29",
+      "last_call": "2026-09-23"
+    },
+    {
+      "source": "P029",
+      "relation": "CONTACTED",
+      "target": "P036",
+      "call_count": 5,
+      "first_call": "2026-08-29",
+      "last_call": "2026-09-20"
+    },
+    {
+      "source": "P030",
+      "relation": "CONTACTED",
+      "target": "P036",
+      "call_count": 4,
+      "first_call": "2026-08-27",
+      "last_call": "2026-09-22"
+    },
+    {
+      "source": "P030",
+      "relation": "CONTACTED",
+      "target": "P004",
+      "call_count": 2,
+      "first_call": "2026-08-30",
+      "last_call": "2026-09-10"
+    },
+    {
+      "source": "P030",
+      "relation": "ASSOCIATED_WITH",
+      "target": "P029"
+    }
+  ]
+}

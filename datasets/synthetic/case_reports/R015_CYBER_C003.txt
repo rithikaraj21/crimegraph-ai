@@ -1,0 +1,25 @@
+SYNTHETIC CASE REPORT - FICTIONAL DATA FOR PROTOTYPE USE ONLY
+Report ID      : R015
+Report Type    : Cyber Analysis Note
+Case           : C003 - Phishing and Malware Campaign
+Date of report : 28 September 2026
+Prepared by    : Investigating Officer (fictional)
+----------------------------------------------------------------
+
+This note combines call records, device information and bank records for the case.
+
+Naveen Chandran was found to be using the phone +91-90000-10017. The laptop LAP-0042 is used by Naveen Chandran. Roshan Ali was found to be using the laptop LAP-0042.
+
+The phone +91-90000-10019 is used by Roshan Ali. Manoj Kannan was found to be using the phone +91-90000-10025. Naveen C is the holder of account XXXXXX4010 at Coastal Bank.
+
+Account XXXXXX4011 is held by Roshan Ali at Sunrise Bank. Sathish Kumar is the holder of account XXXXXX4012 at Metro Cooperative Bank. Manoj Kannan is the holder of account XXXXXX4018 at Metro Cooperative Bank.
+
+Call records show 11 calls between Naveen Chandran and Sathish K from 2 September 2026 to 26 September 2026. Naveen C contacted Roshan Ali 9 times between 28 August 2026 and 27 September 2026. Sathish K contacted Roshan Ali 5 times between 30 August 2026 and 28 September 2026.
+
+Naveen Chandran contacted Manoj Kannan 6 times between 4 September 2026 and 25 September 2026. Roshan Ali contacted Manoj Kannan 4 times between 11 September 2026 and 27 September 2026. On 3 September 2026, the laptop LAP-0042 connected to IP address 198.51.100.23, which is flagged as Malicious-Phishing.
+
+Network logs show that LAP-0042 first contacted IP address 203.0.113.50 on 17 September 2026; this address is flagged as Malicious-C&C. An UPI transfer of Rs. 15,000 was made on 20 September 2026 from account XXXXXX4010 of Naveen C to account XXXXXX4011 of Roshan Ali. An UPI transfer of Rs. 6,000 was made on 22 September 2026 from account XXXXXX4011 of Roshan Ali to account XXXXXX4012 of Sathish Kumar.
+
+On 27 September 2026, Rs. 4,000 was transferred from account XXXXXX4018 (held by Manoj Kannan) to account XXXXXX4010 (held by Naveen Chandran) through UPI. On 24 September 2026, Rs. 9,000 was transferred from account XXXXXX4012 (held by Sathish Kumar) to account XXXXXX4005 (held by Vignesh Anand) through UPI.
+
+This document is synthetic. It contains no real persons and does not establish responsibility for any offence; it is a working note for investigation support only.

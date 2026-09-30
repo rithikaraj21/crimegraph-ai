@@ -1,0 +1,15 @@
+SYNTHETIC CASE REPORT - FICTIONAL DATA FOR PROTOTYPE USE ONLY
+Report ID      : R007
+Report Type    : First Information Report (FIR)
+Case           : C002 - Mule Account UPI Fraud Ring
+Date of report : 23 September 2026
+Prepared by    : Investigating Officer (fictional)
+----------------------------------------------------------------
+
+This report records a cyber-fraud complaint received at the cyber crime cell.
+
+The upi fraud registered as I004 took place at Guindy on 22 September 2026. The matter I004 forms part of case C002. Pooja Sharma reported that they were the victim of incident I004.
+
+Account XXXXXX4017 is held by Pooja Sharma at Sunrise Bank. On 22 September 2026, Rs. 62,000 was transferred from account XXXXXX4017 (held by Pooja Sharma) to account XXXXXX4007 (held by Mohan Das) through UPI. Evidence E008 (screenshots of the fraudulent payment request) is relevant to incident I004.
+
+This document is synthetic. It contains no real persons and does not establish responsibility for any offence; it is a working note for investigation support only.

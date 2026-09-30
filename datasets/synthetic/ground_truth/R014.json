@@ -1,0 +1,76 @@
+{
+  "report_id": "R014",
+  "file": "R014_FIR_I009.txt",
+  "case_id": "C003",
+  "entities": [
+    {
+      "mention": "C003",
+      "id": "C003",
+      "type": "Case"
+    },
+    {
+      "mention": "+91-90000-10021",
+      "id": "D021",
+      "type": "Device"
+    },
+    {
+      "mention": "E014",
+      "id": "E014",
+      "type": "Evidence"
+    },
+    {
+      "mention": "I009",
+      "id": "I009",
+      "type": "Incident"
+    },
+    {
+      "mention": "203.0.113.50",
+      "id": "IP001",
+      "type": "IPAddress"
+    },
+    {
+      "mention": "Perungudi",
+      "id": "L014",
+      "type": "Location"
+    },
+    {
+      "mention": "Prakash Venkat",
+      "id": "P021",
+      "type": "Person"
+    }
+  ],
+  "relations": [
+    {
+      "source": "I009",
+      "relation": "OCCURRED_AT",
+      "target": "L014",
+      "date": "2026-09-26"
+    },
+    {
+      "source": "I009",
+      "relation": "PART_OF",
+      "target": "C003"
+    },
+    {
+      "source": "P021",
+      "relation": "VICTIM_OF",
+      "target": "I009"
+    },
+    {
+      "source": "D021",
+      "relation": "CONNECTED_TO",
+      "target": "IP001",
+      "date": "2026-09-26"
+    },
+    {
+      "source": "E014",
+      "relation": "DERIVED_FROM",
+      "target": "D021"
+    },
+    {
+      "source": "E014",
+      "relation": "SUPPORTS",
+      "target": "I009"
+    }
+  ]
+}
