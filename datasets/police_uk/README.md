@@ -1,6 +1,6 @@
 # Police UK Crime Data
-This folder has crime data we downloaded from data.police.uk. It is the official UK police open data site.
-We downloaded the street-level crime files for July 2026. The download had 41 files, one for each police force. Greater Manchester was not in the download.
+This folder has crime data i downloaded from data.police.uk. It is the official UK police open data site.
+i downloaded the street-level crime files for July 2026. The download had 41 files, one for each police force. Greater Manchester was not in the download.
 
 i kept only 2 files here so the repository does not get too big:
 - 2026-07-metropolitan-street.csv (London) - [number] rows
