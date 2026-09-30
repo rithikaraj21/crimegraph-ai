@@ -9,7 +9,7 @@ between different crime details and give useful information to the investigator.
 
 ### 1. data.police.uk
 
-This is our main dataset.
+This is the main dataset.
 
 Source:
 https://data.police.uk/data/
@@ -42,7 +42,7 @@ POLE means:
 - Location
 - Event
 
-We use the POLE project as a reference for creating our crime investigation
+I am using the POLE project as a reference for creating crime investigation
 graph in Neo4j.
 
 It helps us understand how different investigation information can be
@@ -57,7 +57,7 @@ https://digitalcorpora.org/corpora/file-corpora/files/
 
 This dataset is used for the digital forensics part of our project.
 
-We use it to work with digital files and evidence.
+I use it to work with digital files and evidence.
 
 It is related to the paper:
 
@@ -71,7 +71,7 @@ https://doi.org/10.1186/s42400-024-00241-9
 
 ### 4. Synthetic CrimeGraph Dataset
 
-We also create our own small synthetic dataset.
+
 
 It contains fictional investigation information such as:
 
@@ -81,7 +81,7 @@ It contains fictional investigation information such as:
 - Evidence
 - Crime
 
-This is only for testing and showing relationships in our system.
+This is only for testing and showing relationships in the system.
 
 It is not real police data.
 
