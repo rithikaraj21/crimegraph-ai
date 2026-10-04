@@ -1,0 +1,33 @@
+# ── Python bytecode ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ── Virtual environment ───────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Scratch / temp ────────────────────────────────────────────────
+scratch/
+temp/
+
+# ── Jupyter checkpoints ───────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── VS Code workspace settings ────────────────────────────────────
+.vscode/settings.json
+.vscode/launch.json
+
+# ── Large raw dataset files (too big for GitHub) ──────────────────
+data/raw/ctu13_iot23/*.pcap
+data/raw/ctu13_iot23/*.binetflow
+data/raw/govdocs1/*.tar.gz
+data/raw/govdocs1/*.zip
+
+# ── OS junk ───────────────────────────────────────────────────────
+Thumbs.db
+.DS_Store
+Desktop.ini

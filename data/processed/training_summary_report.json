@@ -1,0 +1,27 @@
+{
+  "execution_timestamp": "2026-10-04 14:19:41",
+  "total_runtime_seconds": 9.92,
+  "model_1_botnet_traffic_detector": {
+    "source_paper": "Paper 8",
+    "dataset": "CTU-13 / IoT-23",
+    "architecture": "Hybrid CNN-LSTM (1D Conv + Bidirectional LSTM)",
+    "test_accuracy": 0.9812834224598931,
+    "test_precision": 0.989100817438692,
+    "test_recall": 0.9918032786885246,
+    "test_f1_score": 0.990450204638472,
+    "test_roc_auc": 0.9853142076502732,
+    "weights_path": "d:\\crimegraphai\\models\\botnet_cnn_lstm\\saved_weights\\best_hybrid_cnn_lstm.pth"
+  },
+  "model_2_evidence_file_classifier": {
+    "source_paper": "Paper 5",
+    "dataset": "Govdocs1",
+    "baseline_model": "Random Forest",
+    "proposed_model": "MLP Classifier with TF-IDF",
+    "explainability": "SHAP (TreeExplainer / Shapley values)",
+    "baseline_accuracy": 0.9992,
+    "baseline_f1": 0.9992,
+    "proposed_mlp_accuracy": 0.9992,
+    "proposed_mlp_f1": 0.9992,
+    "models_path": "d:\\crimegraphai\\models\\file_classifier_mlp\\saved_models"
+  }
+}

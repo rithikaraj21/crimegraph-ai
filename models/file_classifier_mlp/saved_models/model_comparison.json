@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-10-04 14:19:41",
+  "dataset": "Govdocs1 (Digital Forensics Evidence)",
+  "training_time_seconds": 2.79,
+  "baseline_rf": {
+    "model_name": "Baseline: Random Forest",
+    "accuracy": 0.9992,
+    "weighted_precision": 0.9992,
+    "weighted_recall": 0.9992,
+    "weighted_f1": 0.9992,
+    "macro_f1": 0.9992
+  },
+  "proposed_mlp": {
+    "model_name": "Proposed: MLP + TF-IDF (Paper 5)",
+    "accuracy": 0.9992,
+    "weighted_precision": 0.9992,
+    "weighted_recall": 0.9992,
+    "weighted_f1": 0.9992,
+    "macro_f1": 0.9992
+  },
+  "top_diagnostic_features": [
+    "50 4b",
+    "ff",
+    "4b",
+    "74 72",
+    "6d 6c",
+    "5a 90",
+    "78 6d",
+    "90 00",
+    "49 4e",
+    "03 04",
+    "00 00",
+    "4d 5a",
+    "00",
+    "d8 ff",
+    "2e"
+  ]
+}
