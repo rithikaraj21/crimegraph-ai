@@ -106,12 +106,3 @@ crimegraphai/
 ```
 
 ---
-
-## 7. Next Steps & Milestones
-
-- [x] Settle project scope, datasets, and architectural foundations.
-- [ ] Confirm hybrid CNN-LSTM evaluation plan with guide/faculty.
-- [ ] Initialize FastAPI backend and connect to Neo4j instance.
-- [ ] Implement Gemini API extraction pipeline with structured JSON schema.
-- [ ] Build Cytoscape.js React graph interface for node expansion and inspection.
-- [ ] Train and export CNN-LSTM and MLP model weights from Google Colab.
