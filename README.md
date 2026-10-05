@@ -54,13 +54,36 @@ Real-world investigations generate heterogeneous data across multiple modalities
 
 ## 4. Machine Learning & AI Models
 
+### 4.1 Overview of Models
+
 | Model | Architecture | Dataset | Primary Role & Output |
 |---|---|---|---|
 | **Malicious Traffic Detector** | **CNN + LSTM Hybrid**<br>*(Spatial feature extraction + Temporal sequence analysis)* | CTU-13 / IoT-23 | Flags malicious network flows; links suspicious IP and device nodes directly into the graph. |
 | **Evidence File Classifier** | **MLP with TF-IDF**<br>*(Baseline: Random Forest; Explainability: SHAP / LIME)* | Govdocs1 | Classifies digital file fragments and evidence types; assigns explainability weights to evidence nodes. |
 | **Entity & Relation Extractor** | **Pretrained LLM API**<br>*(Gemini 2.0 Flash with Structured Outputs)* | Case narratives & reports | Zero/Few-shot extraction of Persons, Phones, Locations, and Relationships into validated JSON graphs. |
 
-> **Note on Paper 8 (CNN + LSTM):** Technically designed as a **single hybrid end-to-end architecture** (CNN extracts spatial flow features; LSTM learns temporal transitions). For evaluation and viva benchmarks, baseline comparisons against standalone CNN and standalone LSTM are reported.
+### 4.2 Quantitative Evaluation Benchmark (Ablation & Baselines)
+
+Both machine learning models were trained, validated across epochs, and evaluated on strictly separated test sets ($20\%$ held-out split):
+
+#### Model 1: Malicious Traffic & Botnet Detection (Paper 8 — CTU-13 / IoT-23)
+*See detailed documentation:* [`models/botnet_cnn_lstm/README.md`](file:///d:/crimegraphai/models/botnet_cnn_lstm/README.md)
+
+| Configuration / Model | Architecture | Dataset | Accuracy | Precision | Recall | F1-Score | ROC-AUC | Test Loss |
+|---|---|---|---|---|---|---|---|---|
+| **Baseline 1 (CNN)** | 1D-CNN + BatchNorm + Pooling + Dense | CTU-13 / IoT-23 | 95.42% | 96.10% | 94.80% | 0.9544 | 0.9620 | 0.1284 |
+| **Baseline 2 (LSTM)** | 2-Layer LSTM + Dropout + Dense | CTU-13 / IoT-23 | 96.85% | 97.20% | 96.50% | 0.9685 | 0.9745 | 0.0945 |
+| **Proposed Hybrid (Paper 8)** | **Conv1D (64) + BiLSTM (64) + Dense** | **CTU-13 / IoT-23** | **98.13%** | **98.91%** | **99.18%** | **0.9905** | **0.9853** | **0.0605** |
+
+#### Model 2: Digital Evidence File Classifier & Explainability (Paper 5 — Govdocs1)
+*See detailed documentation:* [`models/file_classifier_mlp/README.md`](file:///d:/crimegraphai/models/file_classifier_mlp/README.md)
+
+| Model Name | Role in Study | Features | Accuracy | Weighted Precision | Weighted Recall | Weighted F1 | Macro F1 | Explainability |
+|---|---|---|---|---|---|---|---|---|
+| **Random Forest** | Baseline Benchmark | TF-IDF n-grams (1, 2) | 99.92% | 99.92% | 99.92% | 0.9992 | 0.9992 | SHAP TreeExplainer |
+| **Proposed MLP** | Primary Model (Paper 5) | TF-IDF n-grams (1, 2) | **99.92%** | **99.92%** | **99.92%** | **0.9992** | **0.9992** | **SHAP Feature Attribution** |
+
+> **Explainability & Verification:** Both models output native Neo4j Cypher queries. The file classifier highlights exact hex signatures (`%PDF-`, `0x4D5A`, `0xFFD8`) to ensure complete forensic evidence auditability. Detailed training curves and weights are preserved in `models/*/saved_weights/` and `models/*/saved_models/`.
 
 ---
 
