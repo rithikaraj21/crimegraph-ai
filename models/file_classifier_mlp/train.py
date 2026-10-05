@@ -71,14 +71,14 @@ def run_training_and_explainability(
     rf_metrics = evaluate_model_performance(y_test, rf_preds, "Baseline: Random Forest")
     mlp_metrics = evaluate_model_performance(y_test, mlp_preds, "Proposed: MLP + TF-IDF (Paper 5)")
     
-    print("\n" + "-"*55)
-    print("                 MODEL COMPARISON MATRIX")
-    print("-"*55)
-    print(f"{'Metric':<20} | {'Random Forest (Baseline)':<24} | {'MLP Classifier':<15}")
-    print("-"*55)
-    for metric in ["accuracy", "weighted_precision", "weighted_recall", "weighted_f1", "macro_f1"]:
-        print(f"{metric:<20} | {rf_metrics[metric]:<24} | {mlp_metrics[metric]:<15}")
-    print("-"*55)
+    print("\n" + "="*95)
+    print("      MODEL 2: EVIDENCE FILE-TYPE CLASSIFIER (PAPER 5) - BENCHMARK METRICS")
+    print("="*95)
+    print(f"{'Model Name':<28} | {'Role':<12} | {'Accuracy':<10} | {'Precision':<10} | {'Recall':<10} | {'Weighted F1':<11} | {'Macro F1':<8}")
+    print("-"*95)
+    print(f"{'Random Forest':<28} | {'Baseline':<12} | {rf_metrics['accuracy']*100:.2f}%{'':<3} | {rf_metrics['weighted_precision']*100:.2f}%{'':<3} | {rf_metrics['weighted_recall']*100:.2f}%{'':<3} | {rf_metrics['weighted_f1']:.4f}{'':<5} | {rf_metrics['macro_f1']:.4f}{'':<2}")
+    print(f"{'MLP Classifier (Paper 5)':<28} | {'Proposed':<12} | {mlp_metrics['accuracy']*100:.2f}%{'':<3} | {mlp_metrics['weighted_precision']*100:.2f}%{'':<3} | {mlp_metrics['weighted_recall']*100:.2f}%{'':<3} | {mlp_metrics['weighted_f1']:.4f}{'':<5} | {mlp_metrics['macro_f1']:.4f}{'':<2}")
+    print("="*95)
     
     # 4. Save Models
     pipeline.save(output_dir)
