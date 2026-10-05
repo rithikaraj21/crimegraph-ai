@@ -1,0 +1,6 @@
+Model,Role,Dataset,Architecture,Accuracy,Precision,Recall,F1-Score,ROC-AUC,Macro F1,Explainability
+Standalone CNN,Baseline 1,CTU-13 / IoT-23,1D-CNN + BatchNorm + Pooling + Dense,95.42%,96.10%,94.80%,0.9544,0.9620,-,-
+Standalone LSTM,Baseline 2,CTU-13 / IoT-23,2-Layer LSTM + Dropout + Dense,96.85%,97.20%,96.50%,0.9685,0.9745,-,-
+Hybrid CNN-LSTM (Paper 8),Proposed Model,CTU-13 / IoT-23,Conv1D (64) + BiLSTM (64) + Dense,98.13%,98.91%,99.18%,0.9905,0.9853,-,-
+Random Forest,Baseline,Govdocs1,TF-IDF (500 features) + RF (100 trees),99.92%,99.92%,99.92%,0.9992,-,0.9992,SHAP TreeExplainer
+MLP Classifier (Paper 5),Proposed Model,Govdocs1,TF-IDF (500 features) + MLP [128 64],99.92%,99.92%,99.92%,0.9992,-,0.9992,SHAP Feature Attribution
