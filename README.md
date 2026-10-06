@@ -67,11 +67,11 @@ This repository includes a GitHub Actions workflow for the frontend and a Render
 
 1. Commit and push the project to the `main` branch of `rithikaraj21/crimegraph-ai`.
 2. In GitHub, open **Settings → Pages**, choose **GitHub Actions** as the build and deployment source, then open **Actions** and confirm **Deploy frontend to GitHub Pages** succeeds. The workflow builds the frontend with the Pages subpath and the Render API URL.
-3. In Render, choose **New → Blueprint**, connect `rithikaraj21/crimegraph-ai`, and deploy the repository's `render.yaml`. The Blueprint creates `crimegraph-ai-api`, installs the CPU-only PyTorch wheel and backend dependencies, and attaches a 1 GB persistent disk for SQLite.
+3. In Render, choose **New → Blueprint**, connect `rithikaraj21/crimegraph-ai`, and deploy the repository's `render.yaml`. The Blueprint creates the free `crimegraph-ai-api` service and installs the CPU-only PyTorch wheel and backend dependencies.
 4. Wait for Render's `/api/v1/health` check to pass, then reload the Pages site and verify the API status and model readiness indicators.
 5. If the Render URL or GitHub Pages owner/repository differs, update `VITE_API_BASE_URL` in `.github/workflows/deploy-pages.yml` and `ALLOWED_ORIGINS` in `render.yaml`, then push a new commit.
 
-The Render persistent disk and Starter web service are paid resources; check Render's current pricing before creating them. The GitHub Actions workflow publishes the static frontend whenever frontend files change on `main`; Render auto-deploys backend/configuration changes from the connected branch. Never add API keys to the GitHub Pages build: Pages files are public. If Gemini is needed, set `GEMINI_API_KEY` in the Render service's environment instead.
+This free Render service has an ephemeral filesystem: its SQLite cases are lost whenever Render restarts, redeploys, or spins the service down after 15 minutes without traffic. The first API request after spin-down can take about a minute. This setup is intended for a no-cost classroom demo, not durable storage. The GitHub Actions workflow publishes the static frontend whenever frontend files change on `main`; Render auto-deploys backend/configuration changes from the connected branch. Never add API keys to the GitHub Pages build: Pages files are public. If Gemini is needed, set `GEMINI_API_KEY` in the Render service's environment instead.
 
 The deployed demo API is public and has no sign-in. Use synthetic examples only; do not enter real personal, confidential, or investigative information. GitHub Pages and Render account authorization is required to activate deployment.
 

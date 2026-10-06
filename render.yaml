@@ -2,7 +2,7 @@ services:
   - type: web
     name: crimegraph-ai-api
     runtime: python
-    plan: starter
+    plan: free
     buildCommand: pip install --upgrade pip && pip install --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple "torch>=2.0.0" && pip install -r backend/requirements.txt
     startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/v1/health
@@ -13,10 +13,6 @@ services:
       - key: PYTHONPATH
         value: backend
       - key: CRIMEGRAPH_DATABASE_PATH
-        value: /var/data/crimegraph.sqlite3
+        value: /tmp/crimegraph.sqlite3
       - key: ALLOWED_ORIGINS
         value: https://rithikaraj21.github.io,http://localhost:5173,http://127.0.0.1:5173
-    disk:
-      name: crimegraph-ai-data
-      mountPath: /var/data
-      sizeGB: 1
