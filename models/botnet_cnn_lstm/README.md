@@ -6,12 +6,12 @@ This directory contains the implementation, training pipeline, and evaluation ar
 
 ## 1. Overview & Objective
 
-* **Primary Objective:** Ingest network flow records (durations, bytes, packet rates, TCP flags, inter-arrival times), detect malicious botnet activities (C&C beaconing, DDoS attacks, port scans), and automatically generate Neo4j graph entities and relationships.
+* **Primary Objective:** Classify network flow records using duration, byte/packet counts, TCP flags, and inter-arrival times.
 * **Architecture:** **Hybrid CNN-LSTM Deep Neural Network**
   * **1D-CNN Layer:** Captures localized spatial flow patterns and packet characteristics.
   * **Bidirectional LSTM Layer:** Captures temporal flow dependencies and periodic beaconing behavior over time.
   * **Dense Classification Head:** Predicts threat probabilities with dropout regularization.
-* **Graph Integration:** Outputs `IPAddress` nodes with `MALICIOUS_BOTNET_COMMUNICATION` or `NETWORK_COMMUNICATION` edges directly formatted as Cypher queries.
+* **Application Integration:** The FastAPI service runs the saved model and stores source/destination IP nodes plus the classification relationship in the case's SQLite graph.
 
 ---
 
@@ -38,7 +38,7 @@ The model was evaluated on a strictly separated test set ($20\%$ held-out split)
 | `dataset.py` | NetFlow / Zeek conn.log schema processor & temporal sequence sliding window generator. |
 | `model.py` | PyTorch architectures (`StandaloneCNN`, `StandaloneLSTM`, `HybridCNNLSTM`) & graph formatter. |
 | `train.py` | Training loop with learning rate scheduler, evaluation, and checkpoint persistence. |
-| `evaluate.py` | Inference pipeline that takes network flows and produces live Neo4j Cypher queries. |
+| `evaluate.py` | Standalone research evaluation and graph-payload helper; the web app uses `backend/app/services/ml_service.py` instead. |
 | `saved_weights/best_hybrid_cnn_lstm.pth` | Serialized PyTorch state dict and optimizer checkpoint. |
 | `saved_weights/traffic_scaler.joblib` | Fitted StandardScaler for numerical network features. |
 | `saved_weights/training_metrics.json` | Detailed epoch-wise loss, accuracy, and F1 validation history. |

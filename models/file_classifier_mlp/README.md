@@ -11,8 +11,8 @@ This directory contains the implementation, baseline benchmarking, and explainab
   * **Feature Extraction:** Sublinear TF-IDF vectorization over byte hex n-grams ($\text{ngram\_range}=(1, 2)$, top 500 features).
   * **Baseline Model:** Random Forest Classifier ($100$ estimators, $\text{max\_depth}=20$).
   * **Proposed Model:** Multi-Layer Perceptron (`MLPClassifier` with $[128, 64]$ hidden layers, early stopping).
-* **Explainability (SHAP):** Identifies exact diagnostic byte signatures (e.g. `%PDF-`, `0x4D5A` PE header, `0xFFD8` JPEG SOI, `0x504B` ZIP header) that justify every classification in an audit trail.
-* **Graph Integration:** Generates `EvidenceFile` nodes linked to `DigitalDevice` and `InvestigationCase` with confidence scores and explainability tags.
+* **Explainability:** The training utilities include SHAP analysis. The web app reports recognized file-header signatures as diagnostic context; these signatures are not SHAP explanations and do not prove a file's origin.
+* **Application Integration:** The FastAPI service stores an `EvidenceFile` node, its classification, confidence, and case relationship in SQLite.
 
 ---
 
@@ -46,7 +46,7 @@ Evaluated on a strictly held-out test split ($20\%$, $1,200$ samples) across $6$
 | `dataset.py` | Forensic fragment synthesizer & raw Govdocs1 binary chunk parser. |
 | `model.py` | Pipeline encapsulating `TfidfVectorizer`, `RandomForestClassifier`, and `MLPClassifier`. |
 | `train.py` | Model fitting, baseline evaluation matrix generation, and SHAP Shapley computation. |
-| `explainability.py` | Inference module producing top diagnostic signatures and Neo4j Cypher queries. |
+| `explainability.py` | Standalone research helper for feature attributions and graph-query examples; the web app uses `backend/app/services/ml_service.py` instead. |
 | `saved_models/mlp_classifier.joblib` | Serialized trained MLP neural network model. |
 | `saved_models/rf_baseline.joblib` | Serialized baseline Random Forest model. |
 | `saved_models/tfidf_vectorizer.joblib` | Fitted TF-IDF vocabulary and n-gram weights. |

@@ -13,6 +13,13 @@ ENV/
 # ── Scratch / temp ────────────────────────────────────────────────
 scratch/
 temp/
+.env
+.env.*
+!.env.example
+frontend/dist/
+data/crimegraph.sqlite3
+data/crimegraph.sqlite3-shm
+data/crimegraph.sqlite3-wal
 
 # ── Jupyter checkpoints ───────────────────────────────────────────
 .ipynb_checkpoints/
