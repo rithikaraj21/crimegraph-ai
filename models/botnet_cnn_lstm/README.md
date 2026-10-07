@@ -6,7 +6,7 @@ This directory contains the implementation, training pipeline, and evaluation ar
 
 ## 1. Overview & Objective
 
-* **Primary Objective:** Classify network flow records using duration, byte/packet counts, TCP flags, and inter-arrival times.
+* **Primary Objective:** Demonstrate classification of network flow records using duration, byte/packet counts, protocol flags, and inter-arrival times.
 * **Architecture:** **Hybrid CNN-LSTM Deep Neural Network**
   * **1D-CNN Layer:** Captures localized spatial flow patterns and packet characteristics.
   * **Bidirectional LSTM Layer:** Captures temporal flow dependencies and periodic beaconing behavior over time.
@@ -15,19 +15,19 @@ This directory contains the implementation, training pipeline, and evaluation ar
 
 ---
 
-## 2. Experimental Benchmark Results (Tabular Metrics)
+## 2. Data and Evaluation
 
-The model was evaluated on a strictly separated test set ($20\%$ held-out split) against standard baselines (Standalone CNN and Standalone LSTM) to address research ablation requirements.
+The checked-in training pipeline generates a balanced synthetic benchmark with patterns inspired by CTU-13 and IoT-23. It does **not** currently load and evaluate the original raw CTU-13 or IoT-23 corpora. Features are split into train, validation, and test sets; the scaler is fit on the training split only. Results from this generated benchmark are for demonstration and must not be presented as real-world performance.
 
-| Model / Configuration | Architecture Description | Dataset | Test Loss | Accuracy | Precision | Recall | F1-Score | ROC-AUC | Inference Latency (ms/sample) |
-|---|---|---|---|---|---|---|---|---|---|
-| **Baseline 1 (CNN)** | 1D Conv + BatchNorm + AdaptiveAvgPool + Dense | CTU-13 / IoT-23 | 0.1284 | 95.42% | 96.10% | 94.80% | 0.9544 | 0.9620 | ~0.85 ms |
-| **Baseline 2 (LSTM)** | 2-Layer LSTM + Dropout + Dense | CTU-13 / IoT-23 | 0.0945 | 96.85% | 97.20% | 96.50% | 0.9685 | 0.9745 | ~1.42 ms |
-| **Proposed Hybrid (Paper 8)** | **Conv1D (64) + BiLSTM (64) + Dense** | **CTU-13 / IoT-23** | **0.0605** | **98.13%** | **98.91%** | **99.18%** | **0.9905** | **0.9853** | **~1.15 ms** |
+The training script runs each comparison architecture for at least 50 epochs and writes an independent test-metrics CSV:
 
-### Key Benchmark Observations
-1. **Hybrid Architecture Superiority:** Combining spatial feature extraction (CNN) with temporal sequence modeling (LSTM) yields the highest F1-Score (**0.9905**) and ROC-AUC (**0.9853**), outperforming single-model baselines.
-2. **High Recall (99.18%):** In digital crime investigation, false negatives (missing a botnet host) are critical. The high recall guarantees that infected nodes are consistently captured and forwarded to the knowledge graph.
+| CSV file | Model |
+|---|---|
+| `saved_weights/standalone_cnn_metrics.csv` | Standalone CNN |
+| `saved_weights/standalone_lstm_metrics.csv` | Standalone LSTM |
+| `saved_weights/hybrid_cnn_lstm_metrics.csv` | Hybrid CNN-LSTM (used by the API) |
+
+Metrics are computed from each architecture's selected best validation-F1 checkpoint on the held-out test split. Run training before quoting results; do not reuse earlier README figures as measured results.
 
 ---
 
@@ -35,13 +35,14 @@ The model was evaluated on a strictly separated test set ($20\%$ held-out split)
 
 | File / Folder | Purpose |
 |---|---|
-| `dataset.py` | NetFlow / Zeek conn.log schema processor & temporal sequence sliding window generator. |
+| `dataset.py` | Synthetic traffic generator, train/validation/test split, feature scaling, and temporal window creation. |
 | `model.py` | PyTorch architectures (`StandaloneCNN`, `StandaloneLSTM`, `HybridCNNLSTM`) & graph formatter. |
-| `train.py` | Training loop with learning rate scheduler, evaluation, and checkpoint persistence. |
+| `train.py` | Trains and evaluates all three architectures, exports per-model CSV metrics, and saves checkpoints. |
 | `evaluate.py` | Standalone research evaluation and graph-payload helper; the web app uses `backend/app/services/ml_service.py` instead. |
 | `saved_weights/best_hybrid_cnn_lstm.pth` | Serialized PyTorch state dict and optimizer checkpoint. |
 | `saved_weights/traffic_scaler.joblib` | Fitted StandardScaler for numerical network features. |
-| `saved_weights/training_metrics.json` | Detailed epoch-wise loss, accuracy, and F1 validation history. |
+| `saved_weights/training_metrics.json` | Epoch-wise histories and test metrics for all three traffic architectures. |
+| `saved_weights/*_metrics.csv` | Separate test-metric row for each traffic model. |
 | `saved_weights/training_curves.png` | Loss and Accuracy/F1 training trajectory plots. |
 
 ---
@@ -49,7 +50,7 @@ The model was evaluated on a strictly separated test set ($20\%$ held-out split)
 ## 4. Execution Commands
 
 ```powershell
-# Train the model from scratch
+# Train all three comparison models for at least 50 epochs
 & "d:\crimegraphai\.venv\Scripts\python.exe" d:\crimegraphai\models\botnet_cnn_lstm\train.py
 
 # Run live inference and generate Cypher statements

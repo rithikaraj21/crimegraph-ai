@@ -1,0 +1,2 @@
+model,role,dataset,training_epochs,training_method,training_time_seconds,test_accuracy,test_weighted_precision,test_weighted_recall,test_weighted_f1,test_macro_f1
+Random Forest,Baseline,generated Govdocs1-style file fragments,not_applicable,100 trees; max_depth=20,0.2281,0.9992,0.9992,0.9992,0.9992,0.9992

@@ -1,0 +1,2 @@
+model,dataset,epochs_trained,training_time_seconds,test_loss,test_accuracy,test_precision,test_recall,test_f1,test_auc
+Standalone LSTM,generated CTU-13/IoT-23-style benchmark traffic,50,12.43,0.04850840930239283,0.9812834224598931,0.986449864498645,0.994535519125683,0.9904761904761905,0.9836065573770493

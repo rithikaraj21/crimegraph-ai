@@ -21,8 +21,8 @@ FILE_CATEGORIES = [
 
 def generate_benchmark_govdocs(num_samples: int = 6000, random_seed: int = 42) -> pd.DataFrame:
     """
-    Generates statistically realistic forensic file fragments reflecting
-    Govdocs1 corpus distributions with characteristic byte hex n-grams and magic bytes.
+    Generates synthetic file fragments with common format-signature tokens.
+    These are teaching examples, not fragments sampled from the Govdocs1 corpus.
     """
     np.random.seed(random_seed)
     samples_per_class = num_samples // len(FILE_CATEGORIES)
@@ -90,8 +90,8 @@ def generate_benchmark_govdocs(num_samples: int = 6000, random_seed: int = 42) -
 
 def load_govdocs_dataset(data_dir: str = None, num_samples: int = 6000):
     """
-    Loads real Govdocs1 files if available on disk, otherwise generates
-    statistically authentic benchmark dataset.
+    Reads simple local file chunks only when a directory is explicitly supplied;
+    otherwise generates synthetic Govdocs1-style examples for the demo.
     """
     if data_dir and os.path.exists(data_dir) and len(glob.glob(os.path.join(data_dir, "*.*"))) > 50:
         print(f"[*] Found local Govdocs1 files in {data_dir}. Processing raw files...")

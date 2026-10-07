@@ -14,7 +14,11 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.ensemble import RandomForestClassifier
 
 class EvidenceClassifierPipeline:
-    def __init__(self, max_features: int = 600):
+    def __init__(self, max_features: int = 600, epochs: int = 50):
+        if epochs < 50:
+            raise ValueError("MLP training requires at least 50 epochs.")
+
+        self.epochs = epochs
         self.vectorizer = TfidfVectorizer(
             max_features=max_features,
             token_pattern=r"(?u)\b\w+\b",
@@ -36,9 +40,8 @@ class EvidenceClassifierPipeline:
             alpha=0.0001,
             batch_size=64,
             learning_rate_init=0.001,
-            max_iter=200,
-            early_stopping=True,
-            n_iter_no_change=10,
+            max_iter=1,
+            early_stopping=False,
             random_state=42
         )
         self.is_fitted = False
@@ -47,7 +50,13 @@ class EvidenceClassifierPipeline:
     def fit(self, texts, labels):
         X_tfidf = self.vectorizer.fit_transform(texts)
         self.rf_baseline.fit(X_tfidf, labels)
-        self.mlp_model.fit(X_tfidf, labels)
+        classes = np.unique(labels)
+        for epoch in range(self.epochs):
+            self.mlp_model.partial_fit(
+                X_tfidf,
+                labels,
+                classes=classes if epoch == 0 else None,
+            )
         self.is_fitted = True
         self.classes_ = self.mlp_model.classes_
         return self

@@ -33,8 +33,8 @@ FEATURE_COLUMNS = [
 
 def generate_benchmark_traffic(num_samples: int = 10000, random_seed: int = 42) -> pd.DataFrame:
     """
-    Generates statistically authentic network flows mimicking CTU-13 (Neris, Rbot, Murlo)
-    and IoT-23 botnet behaviors along with normal background traffic.
+    Generates synthetic teaching examples with simplified traffic patterns inspired by
+    common botnet behaviors. These are not records from CTU-13 or IoT-23.
     """
     np.random.seed(random_seed)
     

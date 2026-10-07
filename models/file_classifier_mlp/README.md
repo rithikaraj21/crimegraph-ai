@@ -1,66 +1,51 @@
-# Evidence File-Type Classifier with Explainability (Paper 5)
+# Evidence File-Type Classifier
 
-This directory contains the implementation, baseline benchmarking, and explainability artifacts for the **Digital Evidence File-Type Classification Model** based on **Paper 5** for CrimeGraph AI.
+This directory contains the file-fragment classification example in CrimeGraph AI.
 
----
+## Objective and design
 
-## 1. Overview & Objective
+The classifier demonstrates predicting a file category from a hexadecimal byte fragment. A `TfidfVectorizer` extracts weighted unigram and bigram tokens (up to 500 features). The project evaluates two classifiers:
 
-* **Primary Objective:** Analyze raw byte streams, carved forensic file fragments, and headerless/renamed files recovered from seized storage devices to identify true file formats and prevent evidence obfuscation.
-* **Architecture:**
-  * **Feature Extraction:** Sublinear TF-IDF vectorization over byte hex n-grams ($\text{ngram\_range}=(1, 2)$, top 500 features).
-  * **Baseline Model:** Random Forest Classifier ($100$ estimators, $\text{max\_depth}=20$).
-  * **Proposed Model:** Multi-Layer Perceptron (`MLPClassifier` with $[128, 64]$ hidden layers, early stopping).
-* **Explainability:** The training utilities include SHAP analysis. The web app reports recognized file-header signatures as diagnostic context; these signatures are not SHAP explanations and do not prove a file's origin.
-* **Application Integration:** The FastAPI service stores an `EvidenceFile` node, its classification, confidence, and case relationship in SQLite.
+- **Random Forest baseline:** 100 trees, maximum depth 20. A tree ensemble is not trained in epochs.
+- **TF-IDF + MLP:** hidden layers `[128, 64]`, ReLU activation, Adam optimizer, learning rate `0.001`, batch size 64. The default training run uses 50 epochs via `partial_fit`.
 
----
+The training utilities calculate SHAP values for the Random Forest baseline. The deployed app instead reports recognized file-header signatures as diagnostic context; those markers are not SHAP explanations and do not prove a file's origin.
 
-## 2. Experimental Benchmark Results (Tabular Metrics)
+## Data and evaluation
 
-Evaluated on a strictly held-out test split ($20\%$, $1,200$ samples) across $6$ forensic file categories: `PDF_DOCUMENT`, `OFFICE_DOCX`, `JPEG_IMAGE`, `EXECUTABLE_PAYLOAD`, `TEXT_LOG`, and `ARCHIVE_ZIP`.
+The default loader generates Govdocs1-style synthetic byte fragments in six categories: `PDF_DOCUMENT`, `OFFICE_DOCX`, `JPEG_IMAGE`, `EXECUTABLE_PAYLOAD`, `TEXT_LOG`, and `ARCHIVE_ZIP`. It does **not** currently train and evaluate on the original Govdocs1 corpus. Data are split into training, validation, and test sets; TF-IDF is fit only on training text. Scores from generated examples demonstrate the pipeline but are not real-world accuracy claims.
 
-| Model Name | Role in Paper 5 | Dataset | Accuracy | Weighted Precision | Weighted Recall | Weighted F1-Score | Macro F1-Score | Training Time (s) | Explainability Engine |
-|---|---|---|---|---|---|---|---|---|---|
-| **Random Forest** | Baseline Model | Govdocs1 Fragments | 99.92% | 99.92% | 99.92% | 0.9992 | 0.9992 | ~2.50 s | SHAP TreeExplainer |
-| **MLP Classifier (Proposed)** | Primary Model | Govdocs1 Fragments | **99.92%** | **99.92%** | **99.92%** | **0.9992** | **0.9992** | **~2.79 s** | SHAP Feature Attribution |
+After training, each model's held-out test metrics are saved separately:
 
-### Per-Category Performance Breakdown (Proposed MLP)
-
-| Forensic File Class | Representative Signature / Magic Bytes | Precision | Recall | F1-Score | Test Support |
-|---|---|---|---|---|---|
-| `PDF_DOCUMENT` | `25 50 44 46 2d` (`%PDF-`), `obj / endobj` | 1.0000 | 1.0000 | 1.0000 | 200 |
-| `OFFICE_DOCX` | `50 4b 03 04`, `word/document.xml` | 0.9950 | 1.0000 | 0.9975 | 200 |
-| `JPEG_IMAGE` | `ff d8 ff e0` (SOI / JFIF), `ff d9` (EOI) | 1.0000 | 1.0000 | 1.0000 | 200 |
-| `EXECUTABLE_PAYLOAD` | `4d 5a` (`MZ`), `7f 45 4c 46` (`ELF`), `.text` | 1.0000 | 0.9950 | 0.9975 | 200 |
-| `TEXT_LOG` | `[INFO]`, `AUTH_FAIL`, `USER_LOGIN` | 1.0000 | 1.0000 | 1.0000 | 200 |
-| `ARCHIVE_ZIP` | `50 4b 03 04`, `50 4b 01 02` (Central Dir) | 1.0000 | 1.0000 | 1.0000 | 200 |
-| **Overall Macro Average** | — | **0.9992** | **0.9992** | **0.9992** | **1,200** |
-
----
-
-## 3. Directory Layout & Artifacts
-
-| File / Folder | Purpose |
+| CSV file | Model |
 |---|---|
-| `dataset.py` | Forensic fragment synthesizer & raw Govdocs1 binary chunk parser. |
-| `model.py` | Pipeline encapsulating `TfidfVectorizer`, `RandomForestClassifier`, and `MLPClassifier`. |
-| `train.py` | Model fitting, baseline evaluation matrix generation, and SHAP Shapley computation. |
-| `explainability.py` | Standalone research helper for feature attributions and graph-query examples; the web app uses `backend/app/services/ml_service.py` instead. |
-| `saved_models/mlp_classifier.joblib` | Serialized trained MLP neural network model. |
-| `saved_models/rf_baseline.joblib` | Serialized baseline Random Forest model. |
-| `saved_models/tfidf_vectorizer.joblib` | Fitted TF-IDF vocabulary and n-gram weights. |
-| `saved_models/model_comparison.json` | Quantitative comparison metrics report. |
-| `saved_models/shap_summary.png` | Feature attribution plot showing top forensic signatures. |
+| `saved_models/mlp_metrics.csv` | TF-IDF + MLP |
+| `saved_models/random_forest_metrics.csv` | Random Forest baseline |
 
----
+The files report accuracy, weighted precision/recall/F1, macro F1, training duration, data source, and epoch/training-method information. Run the training script before quoting numbers.
 
-## 4. Execution Commands
+## Artifacts
+
+| File | Purpose |
+|---|---|
+| `dataset.py` | Generates benchmark fragments; contains an optional local-file reader. |
+| `model.py` | TF-IDF, Random Forest, and MLP pipeline definitions. |
+| `train.py` | Training, validation, test metrics, CSV export, and SHAP plot generation. |
+| `saved_models/mlp_classifier.joblib` | Trained MLP used by the API. |
+| `saved_models/rf_baseline.joblib` | Trained baseline. |
+| `saved_models/tfidf_vectorizer.joblib` | Fitted TF-IDF transformer used by inference. |
+| `saved_models/mlp_metrics.csv` | MLP held-out test metrics. |
+| `saved_models/random_forest_metrics.csv` | Random Forest held-out test metrics. |
+| `saved_models/model_comparison.json` | Comparison metrics and MLP epoch history. |
+| `saved_models/shap_summary.png` | Random Forest SHAP summary from the training utility. |
+
+## Run training (Windows PowerShell)
+
+From the repository root with its Python environment active:
 
 ```powershell
-# Train both Baseline and MLP, compute metrics, and generate SHAP plots
-& "d:\crimegraphai\.venv\Scripts\python.exe" d:\crimegraphai\models\file_classifier_mlp\train.py
-
-# Run explainable inference on an evidence file fragment
-& "d:\crimegraphai\.venv\Scripts\python.exe" d:\crimegraphai\models\file_classifier_mlp\explainability.py
+$env:PYTHONPATH = "."
+python models\file_classifier_mlp\train.py
 ```
+
+The script explicitly uses 50 epochs. The API loads the serialized MLP and fitted TF-IDF artifact from this directory.

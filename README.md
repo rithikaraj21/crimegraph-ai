@@ -10,6 +10,8 @@ CrimeGraph AI is a beginner-friendly full-stack investigation-support demo. It t
 - Browse, search, filter, select, and export case graphs as JSON.
 - Extract people, phone numbers, IP addresses, and locations from case notes. The local pattern extractor works without credentials; Gemini is optional.
 - Classify network flows with the included CNN-LSTM model and file-byte samples with the included TF-IDF + MLP model.
+- Train and compare a standalone CNN, standalone LSTM, and hybrid CNN-LSTM; export separate per-model CSV metrics.
+- Train the file MLP for 50 epochs and compare it with a Random Forest baseline, exporting separate CSV metrics.
 - Add extraction and classification results to the selected case graph.
 - Persist cases, graph nodes, relationships, and model results in a local SQLite database. The first run seeds a sample case.
 - Inspect backend status and model readiness in the interface and at `/api/v1/health`.
@@ -30,6 +32,20 @@ FastAPI + Pydantic ──► SQLite case/graph storage
 The frontend calls FastAPI; FastAPI validates requests, calls the extraction or inference services, and writes graph changes to SQLite. SQLite and the local pattern extractor need no external service.
 
 ## Run locally (Windows PowerShell)
+
+### Streamlit demo (direct local calls; no HTTP API server)
+
+Use Python 3.12 as noted below. The Streamlit UI calls the existing Python validation, model, and SQLite services in-process. It does not make frontend-to-backend HTTP requests; narrative extraction in this UI also always uses local rules and does not call Gemini.
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r streamlit_requirements.txt
+streamlit run streamlit_app.py
+```
+
+Streamlit opens the local demo in a browser. The case database is shared with the FastAPI app when both use the default `data\crimegraph.sqlite3` path. Use synthetic examples only.
 
 ### 1. Backend
 
@@ -92,6 +108,32 @@ Local pattern extraction is the default and requires no API key. To enable Gemin
 | `POST` | `/api/v1/models/file-classifier/predict` | Classify and attach a hexadecimal sample |
 
 Request and response schemas are documented by FastAPI at `/docs`.
+
+## Model training and benchmark results
+
+The default training scripts generate synthetic benchmark-style examples in code, inspired by common CTU-13/IoT-23 traffic behaviors and file-format signatures. They do not download or evaluate the original named datasets in their normal training runs. Treat these metrics as a demonstration of the training pipeline, not evidence of real-world forensic performance.
+
+From the repository root in the project Python environment:
+
+```powershell
+$env:PYTHONPATH = "."
+python models\botnet_cnn_lstm\train.py
+python models\file_classifier_mlp\train.py
+```
+
+The traffic training script runs three architectures for at least 50 epochs each. The file-classifier script trains the MLP for at least 50 epochs; the Random Forest baseline is a tree ensemble and does not use epochs. Each evaluated model writes an independent CSV:
+
+- `models\botnet_cnn_lstm\saved_weights\standalone_cnn_metrics.csv`
+- `models\botnet_cnn_lstm\saved_weights\standalone_lstm_metrics.csv`
+- `models\botnet_cnn_lstm\saved_weights\hybrid_cnn_lstm_metrics.csv`
+- `models\file_classifier_mlp\saved_models\mlp_metrics.csv`
+- `models\file_classifier_mlp\saved_models\random_forest_metrics.csv`
+
+Use the CSVs from the latest run when reporting results. The training scripts also save model checkpoints and training histories. Retraining locally does not automatically update the deployed Render service.
+
+For the complete beginner-friendly code walkthrough, ML glossary, current benchmark results, hosting details, viva questions, and demo script, see [presentation/Project_Study_Guide.md](presentation/Project_Study_Guide.md) and [presentation/Project_Study_Guide.pdf](presentation/Project_Study_Guide.pdf).
+
+The updated five-slide classroom review deck describes the direct-call Streamlit demo, the two ML models, and their generated-data results: [CrimeGraph_AI_Presentation_Streamlit.pptx](CrimeGraph_AI_Presentation_Streamlit.pptx). A matching PDF is also available at [CrimeGraph_AI_Presentation_Streamlit.pdf](CrimeGraph_AI_Presentation_Streamlit.pdf).
 
 ## Tests and checks
 

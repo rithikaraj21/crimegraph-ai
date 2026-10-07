@@ -40,6 +40,13 @@ class LLMExtractorService:
         return extracted
 
     @classmethod
+    def extract_locally_from_narrative(cls, narrative_text: str, case_id: str) -> Dict[str, Any]:
+        """Extracts entities with local rules without making external API requests."""
+        extracted = cls._fallback_pattern_extractor(narrative_text, case_id)
+        extracted["extractor"] = "Local pattern extractor"
+        return extracted
+
+    @classmethod
     def _call_gemini_api(cls, narrative: str, case_id: str) -> Dict[str, Any]:
         """
         Invokes Gemini 2.0 Flash REST API with JSON schema enforcement.
